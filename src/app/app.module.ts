@@ -1,3 +1,6 @@
+import { EstadosModule } from './estados/estados.module';
+import { EstadosCadastroComponent } from './estados/estados-cadastro/estados-cadastro.component';
+import { EstadosPesquisaComponent } from './estados/estados-pesquisa/estados-pesquisa.component';
 import { CategoriasCadastroComponent } from './categorias/categorias-cadastro/categorias-cadastro.component';
 import { CategoriasPesquisaComponent } from './categorias/categorias-pesquisa/categorias-pesquisa.component';
 import { CategoriasModule } from './categorias/categorias.module';
@@ -19,7 +22,11 @@ import { Routes, RouterModule } from '@angular/router';
 const rotas: Routes = [
 	{path: 'categorias', component: CategoriasPesquisaComponent},
 	{path: 'categorias/novo', component: CategoriasCadastroComponent},
-	{path: 'categorias/:id', component: CategoriasCadastroComponent}
+  {path: 'categorias/:id', component: CategoriasCadastroComponent},
+
+  {path: 'estados', component: EstadosPesquisaComponent},
+  {path: 'estados/novo', component: EstadosCadastroComponent},
+  {path: 'estados/:id', component: EstadosCadastroComponent}
 ];
 
 @NgModule({
@@ -30,6 +37,7 @@ const rotas: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     CategoriasModule,
+    EstadosModule,
     HttpClientModule,
     ToastModule,
     RouterModule.forRoot(rotas)
